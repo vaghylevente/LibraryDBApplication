@@ -91,11 +91,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\FDU7VL_HFT_2021221.Endpoint.csproj",
+      "projectUniqueName": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\FDU7VL_HFT_2021221.Endpoint.csproj",
       "projectName": "FDU7VL_HFT_2021221.Endpoint",
-      "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\FDU7VL_HFT_2021221.Endpoint.csproj",
+      "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\FDU7VL_HFT_2021221.Endpoint.csproj",
       "packagesPath": "C:\\Users\\Chairman Cat\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\obj\\",
+      "outputPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Chairman Cat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -112,17 +112,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Data\\FDU7VL_HFT_2021221.Data.csproj": {
-              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Data\\FDU7VL_HFT_2021221.Data.csproj"
+            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Data\\FDU7VL_HFT_2021221.Data.csproj": {
+              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Data\\FDU7VL_HFT_2021221.Data.csproj"
             },
-            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Logic\\FDU7VL_HFT_2021221.Logic.csproj": {
-              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Logic\\FDU7VL_HFT_2021221.Logic.csproj"
+            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Logic\\FDU7VL_HFT_2021221.Logic.csproj": {
+              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Logic\\FDU7VL_HFT_2021221.Logic.csproj"
             },
-            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Models\\FDU7VL_HFT_2021221.Models.csproj": {
-              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Models\\FDU7VL_HFT_2021221.Models.csproj"
+            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Models\\FDU7VL_HFT_2021221.Models.csproj": {
+              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Models\\FDU7VL_HFT_2021221.Models.csproj"
             },
-            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Repository\\FDU7VL_HFT_2021221.Repository.csproj": {
-              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Repository\\FDU7VL_HFT_2021221.Repository.csproj"
+            "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Repository\\FDU7VL_HFT_2021221.Repository.csproj": {
+              "projectPath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Repository\\FDU7VL_HFT_2021221.Repository.csproj"
             }
           }
         }
