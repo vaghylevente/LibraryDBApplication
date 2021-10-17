@@ -13,6 +13,7 @@ namespace FDU7VL_HFT_2021221.Models
     {
         [Key]
         public int BookID { get; set; }
+        [Required]
         public string Title { get; set; }
         public string Author { get; set; }
 

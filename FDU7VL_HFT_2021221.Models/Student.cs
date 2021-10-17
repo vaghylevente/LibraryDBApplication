@@ -13,7 +13,9 @@ namespace FDU7VL_HFT_2021221.Models
     {
         [Key]
         public int StudentID { get; set; }
+        [Required]
         public string Name { get; set; }
+        [MaxLength(1)]
         public string Class { get; set; }
         public virtual ICollection<Borrowing> Borrowings { get; set; }
 
