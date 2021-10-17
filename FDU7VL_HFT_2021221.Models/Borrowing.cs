@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FDU7VL_HFT_2021221.Models
 {
-    class Borrowing
+    public class Borrowing
     {
         [Key]
         public int BorrowingID { get; set; }

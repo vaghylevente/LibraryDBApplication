@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FDU7VL_HFT_2021221.Models
 {
-    class Book
+    public class Book
     {
         [Key]
         public int BookID { get; set; }
