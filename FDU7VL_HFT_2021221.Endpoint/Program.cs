@@ -11,6 +11,7 @@ namespace FDU7VL_HFT_2021221.Endpoint
 {
     public class Program
     {
+        //Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security = True
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
