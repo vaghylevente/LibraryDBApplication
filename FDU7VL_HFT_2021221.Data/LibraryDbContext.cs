@@ -48,6 +48,9 @@ namespace FDU7VL_HFT_2021221.Data
             Book book2 = new Book() { BookID = 2, Title = "The Call of Cthulhu", Author = "H. P. Lovecraft" };
             Book book3 = new Book() { BookID = 3, Title = "A study in Scarlet", Author = "Conan Doyle" };
 
+            modelBuilder.Entity<Student>().HasData(peter, lilla, gabor);
+            modelBuilder.Entity<Borrowing>().HasData(peter1, lilla1, lilla2, gabor1);
+            modelBuilder.Entity<Book>().HasData(book1, book2, book3);
         }
     }
 }
