@@ -8,7 +8,7 @@ using FDU7VL_HFT_2021221.Models;
 
 namespace FDU7VL_HFT_2021221.Data
 {
-    class LibraryDbContext : DbContext
+    public class LibraryDbContext : DbContext
     {
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Borrowing> Borrowings { get; set; }
