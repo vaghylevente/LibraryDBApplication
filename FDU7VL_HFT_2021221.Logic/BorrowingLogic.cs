@@ -38,5 +38,15 @@ namespace FDU7VL_HFT_2021221.Logic
         {
             repo.Delete(id);
         }
+        //non-crud
+        public Book MostPopularBook()
+        {
+            var query = (from x in ReadAll()
+                         group x by x.Book into g
+                         orderby g.Count() descending
+                         select g.Key).FirstOrDefault();
+            return query;
+
+        }
     }
 }

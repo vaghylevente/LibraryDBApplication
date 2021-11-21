@@ -14,5 +14,7 @@ namespace FDU7VL_HFT_2021221.Logic
         IQueryable<Borrowing> ReadAll();
         void Update(Borrowing borrowing);
         void Delete(int id);
+        //non-crud
+        Book MostPopularBook();
     }
 }

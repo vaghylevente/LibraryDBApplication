@@ -50,5 +50,8 @@ namespace FDU7VL_HFT_2021221.Logic
         {
             repo.Delete(id);
         }
+
+        //non-crud
+        
     }
 }

@@ -15,5 +15,7 @@ namespace FDU7VL_HFT_2021221.Logic
         IQueryable<Book> ReadAll();
         void Update(Book book);
         void Delete(int id);
+
+        //non-crud
     }
 }
