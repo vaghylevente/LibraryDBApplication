@@ -11,6 +11,7 @@ namespace FDU7VL_HFT_2021221.Repository
     {
         void Create(Student student);
         Student Read(int id);
+        IQueryable<Student> ReadAll();
         void Update(Student student);
         void Delete(int id);
     }

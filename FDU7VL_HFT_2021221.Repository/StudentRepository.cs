@@ -28,6 +28,11 @@ namespace FDU7VL_HFT_2021221.Repository
             return db.Students.FirstOrDefault(x => x.StudentID == id);
         }
 
+        public IQueryable<Student> ReadAll()
+        {
+            return db.Students;
+        }
+
         public void Update(Student student)
         {
             var oldStudent = Read(student.StudentID);
@@ -40,5 +45,7 @@ namespace FDU7VL_HFT_2021221.Repository
             db.Remove(Read(id));
             db.SaveChanges();
         }
+
+        
     }
 }
