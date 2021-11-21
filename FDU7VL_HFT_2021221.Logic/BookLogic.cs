@@ -32,11 +32,6 @@ namespace FDU7VL_HFT_2021221.Logic
             }
         }
 
-        public void Delete(int id)
-        {
-            repo.Delete(id);
-        }
-
         public Book Read(int id)
         {
             return repo.Read(id);
@@ -50,6 +45,10 @@ namespace FDU7VL_HFT_2021221.Logic
         public void Update(Book book)
         {
             repo.Update(book);
+        }
+        public void Delete(int id)
+        {
+            repo.Delete(id);
         }
     }
 }
