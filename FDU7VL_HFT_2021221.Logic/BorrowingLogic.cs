@@ -48,5 +48,38 @@ namespace FDU7VL_HFT_2021221.Logic
             return query;
 
         }
+        public Student FirstBorrowing()
+        {
+            var query = (from x in ReadAll()
+                         orderby x.Date
+                         select x.Student).FirstOrDefault();
+            return query;
+        }
+        public Student BiggestBorrower()
+        {
+            var query = (from x in ReadAll()
+                         group x by x.Student into g
+                         orderby g.Count() descending
+                         select g.Key).FirstOrDefault();
+            return query;
+        }
+        public IEnumerable<KeyValuePair<Book, int>> BorrowingPerBook()
+        {
+            var query = from x in ReadAll()
+                        group x by x.Book into g
+                        select new KeyValuePair<Book, int>(
+                            g.Key, 
+                            g.Count()
+                        );
+            return query;
+        }
+        public IEnumerable<Book> BooksBorrowedBy(Student student)
+        {
+            var query = from x in ReadAll()
+                        where x.StudentID == student.StudentID
+                        select x.Book;
+            return query;
+
+        }
     }
 }
