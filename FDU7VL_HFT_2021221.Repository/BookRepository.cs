@@ -27,6 +27,10 @@ namespace FDU7VL_HFT_2021221.Repository
         {
             return db.Books.FirstOrDefault(x => x.BookID == id);
         }
+        public IQueryable<Book> ReadAll()
+        {
+            return db.Books;
+        }
 
         public void Update(Book book)
         {
@@ -40,5 +44,7 @@ namespace FDU7VL_HFT_2021221.Repository
             db.Remove(Read(id));
             db.SaveChanges();
         }
+
+        
     }
 }

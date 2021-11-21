@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FDU7VL_HFT_2021221.Logic
 {
-    interface IBookLogic
+    public interface IBookLogic
     {
+
     }
 }
