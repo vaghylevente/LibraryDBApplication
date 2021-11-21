@@ -11,6 +11,7 @@ namespace FDU7VL_HFT_2021221.Repository
     {
         void Create(Borrowing borrowing);
         Borrowing Read(int id);
+        IQueryable<Borrowing> ReadAll();
         void Update(Borrowing borrowing);
         void Delete(int id);
     }

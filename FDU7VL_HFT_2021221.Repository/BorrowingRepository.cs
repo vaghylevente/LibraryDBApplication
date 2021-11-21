@@ -25,7 +25,10 @@ namespace FDU7VL_HFT_2021221.Repository
         {
             return db.Borrowings.FirstOrDefault(x => x.BorrowingID == id);
         }
-
+        public IQueryable<Borrowing> ReadAll()
+        {
+            return db.Borrowings;
+        }
         public void Update(Borrowing borrowing)
         {
             var oldBorrowing = Read(borrowing.BorrowingID);
@@ -37,5 +40,7 @@ namespace FDU7VL_HFT_2021221.Repository
             db.Remove(Read(id));
             db.SaveChanges();
         }
+
+        
     }
 }
