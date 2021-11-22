@@ -19,6 +19,6 @@ namespace FDU7VL_HFT_2021221.Logic
         Student FirstBorrower();
         Student BiggestBorrower();
         IEnumerable<KeyValuePair<Book, int>> BorrowingPerBook();
-        IEnumerable<Book> BooksBorrowedBy(Student student);
+        IEnumerable<Book> BooksBorrowedBy(string name);
     }
 }

@@ -166,10 +166,14 @@ namespace FDU7VL_HFT_2021221.Test
             Assert.That(results.Exists(x => x.Key.Title == "Oghma Infinium" && x.Value == 2));
             Assert.That(results.Exists(x => x.Key.Title == "Elder Scroll" && x.Value == 1));
         }
-        [Test]
-        public void BooksBorrowedByTest()
+        [TestCase("Péter", "Oghma Infinium", "Elder Scroll")]
+        [TestCase("Anna", "Oghma Infinium")]
+        public void BooksBorrowedByTest(string name, params string[] titles)
         {
-            //var results = borrowingLogic.BooksBorrowedBy()
+            var expected = titles.ToHashSet();
+            var results = borrowingLogic.BooksBorrowedBy(name).Select(x => x.Title);
+            
+            Assert.That(expected.SetEquals(results));
         }
 
     }
