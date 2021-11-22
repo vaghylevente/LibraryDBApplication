@@ -45,7 +45,7 @@ namespace FDU7VL_HFT_2021221.Test
                 },
                 new Book()
                 {
-                    Title = "Könyv2",
+                    Title = "Elder Scroll",
                     Author = "Author2",
                 }
 
@@ -110,15 +110,31 @@ namespace FDU7VL_HFT_2021221.Test
                 }), Throws.Nothing);
             }
         }
-        [Test]
-        public void CreateStudentTest(string name, bool exception)
-        {
-
-        }
-        [Test]
+        
+        [TestCase("1900-1-1", true)]
+        [TestCase("2015-4-6", false)]
         public void CreateBorrowingTest(DateTime date, bool excepion)
         {
-
+            if (excepion)
+            {
+                Assert.That(() => borrowingLogic.Create(
+                    new Borrowing()
+                    {
+                        Student = new Student(),
+                        Date = date,
+                        Book = new Book()
+                    }), Throws.Exception);
+            }
+            else
+            {
+                Assert.That(() => borrowingLogic.Create(
+                    new Borrowing()
+                    {
+                        Student = new Student(),
+                        Date = date,
+                        Book = new Book()
+                    }), Throws.Nothing);
+            }
         }
         [Test]
         public void MostPopularBookTest()
@@ -145,12 +161,15 @@ namespace FDU7VL_HFT_2021221.Test
         [Test]
         public void BorrowingPerBookTest()
         {
-            
+            var results = borrowingLogic.BorrowingPerBook().ToList();
+
+            Assert.That(results.Exists(x => x.Key.Title == "Oghma Infinium" && x.Value == 2));
+            Assert.That(results.Exists(x => x.Key.Title == "Elder Scroll" && x.Value == 1));
         }
         [Test]
-        public void BooksBorrowedByTest(Student student)
+        public void BooksBorrowedByTest()
         {
-            throw new NotImplementedException();
+            //var results = borrowingLogic.BooksBorrowedBy()
         }
 
     }
