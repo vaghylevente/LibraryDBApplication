@@ -17,7 +17,14 @@ namespace FDU7VL_HFT_2021221.Logic
         }
         public void Create(Borrowing borrowing)
         {
-            repo.Create(borrowing);
+            if (borrowing.Date.Year < 2000)
+            {
+                throw new ArgumentException("The library has not yet existed in that year.");
+            }
+            else
+            {
+                repo.Create(borrowing);
+            }
         }
 
         public Borrowing Read(int id)
