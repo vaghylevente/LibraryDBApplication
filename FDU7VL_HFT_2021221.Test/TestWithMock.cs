@@ -1,5 +1,6 @@
 ﻿using FDU7VL_HFT_2021221.Logic;
 using FDU7VL_HFT_2021221.Models;
+using FDU7VL_HFT_2021221.Repository;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -18,67 +19,73 @@ namespace FDU7VL_HFT_2021221.Test
         BookLogic bookLogic;
         public TestWithMock()
         {
-            Mock<IBorrowingLogic> mockBorrowingRepository = new();
-            Mock<IStudentLogic> mockStudentRepository = new();
-            Mock<IBookLogic> mockBookRepositry = new();
+            Mock<IBorrowingRepository> mockBorrowingRepository = new();
+            Mock<IStudentRepository> mockStudentRepository = new();
+            Mock<IBookRepository> mockBookRepositry = new();
 
-            var borrowings = new List<Borrowing>()
-            {
-                new Borrowing()
-                {
-                    StudentID = 1,
-                    Date = new DateTime(2021,11,22),
-                    BookID = 1
-                },
-                new Borrowing()
-                {
-                    StudentID = 1,
-                    Date = new DateTime(2021,11,30),
-                    BookID = 2
-                },
-                new Borrowing()
-                {
-                    StudentID = 2,
-                    Date = new DateTime(2021,6,5),
-                    BookID = 1
-                }
-            }.AsQueryable();
             var students = new List<Student>()
             {
                 new Student()
                 {
-                    Name = "Name1",
+                    Name = "Péter",
                     Class = "A",
-                    StudentID = 1
                 },
                 new Student()
                 {
-                    Name = "Name2",
+                    Name = "Anna",
                     Class = "B",
-                    StudentID = 2
                 }
             }.AsQueryable();
             var books = new List<Book>()
             {
                 new Book()
                 {
-                    Title = "Title1",
+                    Title = "Oghma Infinium",
                     Author = "Author1",
-                    BookID = 1
                 },
                 new Book()
                 {
-                    Title = "Title2",
+                    Title = "Könyv2",
                     Author = "Author2",
-                    BookID = 2
                 }
 
             }.AsQueryable();
+            var borrowings = new List<Borrowing>()
+            {
+                new Borrowing()
+                {
+                    Student = students.ElementAt(0),
+                    Date = new DateTime(2021,11,22),
+                    Book = books.ElementAt(0)
+                },
+                new Borrowing()
+                {
+                    Student = students.ElementAt(0),
+                    Date = new DateTime(2021,11,30),
+                    Book = books.ElementAt(1)
+                },
+                new Borrowing()
+                {
+                    Student = students.ElementAt(1),
+                    Date = new DateTime(2019,6,5),
+                    Book = books.ElementAt(0)
+                }
+            }.AsQueryable();
+            
+            
 
 
             mockBorrowingRepository.Setup(t => t.Create(It.IsAny<Borrowing>()));
             mockStudentRepository.Setup(t => t.Create(It.IsAny<Student>()));
             mockBookRepositry.Setup(t => t.Create(It.IsAny<Book>()));
+
+            mockBorrowingRepository.Setup(t => t.ReadAll()).Returns(borrowings);
+            mockStudentRepository.Setup(t => t.ReadAll()).Returns(students);
+            mockBookRepositry.Setup(t => t.ReadAll()).Returns(books);
+
+            borrowingLogic = new BorrowingLogic(mockBorrowingRepository.Object);
+            studentLogic = new StudentLogic(mockStudentRepository.Object);
+            bookLogic = new BookLogic(mockBookRepositry.Object);
         }
         [TestCase("", "author", true)]
         [TestCase("title", "", false)]
@@ -116,22 +123,29 @@ namespace FDU7VL_HFT_2021221.Test
         [Test]
         public void MostPopularBookTest()
         {
-
+            //ACT
+            var result = borrowingLogic.MostPopularBook();
+            //ASSERT
+            Assert.That(result.Title == "Oghma Infinium");
         }
         [Test]
-        public void FirstBorrowingTest()
+        public void FirstBorrowerTest()
         {
-            throw new NotImplementedException();
+            var result = borrowingLogic.FirstBorrower();
+
+            Assert.That(result.Name == "Anna");
         }
         [Test]
         public void BiggestBorrowerTest()
         {
-            throw new NotImplementedException();
+            var result = borrowingLogic.BiggestBorrower();
+
+            Assert.That(result.Name == "Péter");
         }
         [Test]
         public void BorrowingPerBookTest()
         {
-            throw new NotImplementedException();
+            
         }
         [Test]
         public void BooksBorrowedByTest(Student student)

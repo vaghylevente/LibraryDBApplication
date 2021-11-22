@@ -55,7 +55,7 @@ namespace FDU7VL_HFT_2021221.Logic
             return query;
 
         }
-        public Student FirstBorrowing()
+        public Student FirstBorrower()
         {
             var query = (from x in ReadAll()
                          orderby x.Date
