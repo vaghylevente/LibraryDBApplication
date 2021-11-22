@@ -21,7 +21,7 @@ namespace FDU7VL_HFT_2021221.Logic
             {
                 throw new ArgumentException("The book has to have a title!");
             }
-            if (book.Author == null || book.Author == "")
+            else if (book.Author == null || book.Author == "")
             {
                 book.Author = "unknown";
                 repo.Create(book);

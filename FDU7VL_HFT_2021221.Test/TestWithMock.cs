@@ -80,10 +80,64 @@ namespace FDU7VL_HFT_2021221.Test
             mockStudentRepository.Setup(t => t.Create(It.IsAny<Student>()));
             mockBookRepositry.Setup(t => t.Create(It.IsAny<Book>()));
         }
-
+        [TestCase("", "author", true)]
+        [TestCase("title", "", false)]
+        [TestCase(null, "author", true)]
+        [TestCase("title", null, false)]
         public void CreateBookTest(string title, string author, bool exception)
+        {
+            if (exception)
+            {
+                Assert.That(() => bookLogic.Create(new Book()
+                {
+                    Title = title,
+                    Author = author
+                }), Throws.Exception);
+            }
+            else
+            {
+                Assert.That(() => bookLogic.Create(new Book()
+                {
+                    Title = title,
+                    Author = author
+                }), Throws.Nothing);
+            }
+        }
+        [Test]
+        public void CreateStudentTest(string name, bool exception)
         {
 
         }
+        [Test]
+        public void CreateBorrowingTest(DateTime date, bool excepion)
+        {
+
+        }
+        [Test]
+        public void MostPopularBookTest()
+        {
+
+        }
+        [Test]
+        public void FirstBorrowingTest()
+        {
+            throw new NotImplementedException();
+        }
+        [Test]
+        public void BiggestBorrowerTest()
+        {
+            throw new NotImplementedException();
+        }
+        [Test]
+        public void BorrowingPerBookTest()
+        {
+            throw new NotImplementedException();
+        }
+        [Test]
+        public void BooksBorrowedByTest(Student student)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
