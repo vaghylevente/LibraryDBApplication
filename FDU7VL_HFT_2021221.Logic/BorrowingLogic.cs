@@ -80,10 +80,10 @@ namespace FDU7VL_HFT_2021221.Logic
                         );
             return query;
         }
-        public IEnumerable<Book> BooksBorrowedBy(Student student)
+        public IEnumerable<Book> BooksBorrowedBy(string name)
         {
             var query = from x in ReadAll()
-                        where x.StudentID == student.StudentID
+                        where x.Student.Name == name
                         select x.Book;
             return query;
 
