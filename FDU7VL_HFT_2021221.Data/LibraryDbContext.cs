@@ -42,14 +42,14 @@ namespace FDU7VL_HFT_2021221.Data
             Student chad = new() { StudentID = 5, Name = "Chad", Class = "A" };
             Student viktor = new() { StudentID = 6, Name = "Viktor", Class = "B" };
 
-            Borrowing peter1 = new() { StudentID = 1, Date = new DateTime(2021, 10, 10), BookID = 1 };
-            Borrowing lilla1 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 1 };
-            Borrowing lilla2 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 2 };
-            Borrowing lilla3 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 5 };
-            Borrowing gabor1 = new() { StudentID = 3, Date = new DateTime(2021, 10, 15), BookID = 3 };
-            Borrowing igor1 = new() { StudentID = 4, Date = new DateTime(1910, 9, 12), BookID = 4 };
-            Borrowing igor2 = new() { StudentID = 4, Date = new DateTime(2021, 6, 10), BookID = 6 };
-            Borrowing viktor1 = new() { StudentID = 1, Date = new DateTime(2021, 11, 5), BookID = 1 };
+            Borrowing peter1 = new() { StudentID = 1, Date = new DateTime(2021, 10, 10), BookID = 1, BorrowingID = 1 };
+            Borrowing lilla1 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 1, BorrowingID = 2 };
+            Borrowing lilla2 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 2, BorrowingID = 3 };
+            Borrowing lilla3 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 5, BorrowingID = 4 };
+            Borrowing gabor1 = new() { StudentID = 3, Date = new DateTime(2021, 10, 15), BookID = 3, BorrowingID = 5 };
+            Borrowing igor1 = new() { StudentID = 4, Date = new DateTime(1910, 9, 12), BookID = 4, BorrowingID = 6 };
+            Borrowing igor2 = new() { StudentID = 4, Date = new DateTime(2021, 6, 10), BookID = 6, BorrowingID = 7 };
+            Borrowing viktor1 = new() { StudentID = 1, Date = new DateTime(2021, 11, 5), BookID = 1, BorrowingID = 8 };
 
 
             Book book1 = new() { BookID = 1, Title = "Head First C", Author = "David Griffith and Dawn Griffith"};

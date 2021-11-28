@@ -10,42 +10,42 @@ using System.Threading.Tasks;
 
 namespace FDU7VL_HFT_2021221.Endpoint.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class StudentController : ControllerBase
+    public class BorrowingController : ControllerBase
     {
-        IStudentLogic sl;
-        public StudentController(IStudentLogic studentLogic)
+        IBorrowingLogic bl;
+        public BorrowingController(IBorrowingLogic borrowingLogic)
         {
-            sl = studentLogic;
+            bl = borrowingLogic;
         }
-        // GET: api/<StudentController>
+        // GET: api/<BorrowingController>
         [HttpGet]
-        public IEnumerable<Student> Get()
+        public IEnumerable<Borrowing> Get()
         {
-            return sl.ReadAll();
+            return bl.ReadAll();
         }
 
-        // GET api/<StudentController>/5
+        // GET api/<BorrowingController>/5
         [HttpGet("{id}")]
-        public Student Get(int id)
+        public string Get(int id)
         {
-            return sl.Read(id);
+            return "value";
         }
 
-        // POST api/<StudentController>
+        // POST api/<BorrowingController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<StudentController>/5
+        // PUT api/<BorrowingController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<StudentController>/5
+        // DELETE api/<BorrowingController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

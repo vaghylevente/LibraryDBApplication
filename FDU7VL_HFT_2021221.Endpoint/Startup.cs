@@ -21,12 +21,12 @@ namespace FDU7VL_HFT_2021221.Endpoint
         {
             services.AddControllers();
             services.AddTransient<IStudentLogic, StudentLogic>();
-            //services.AddTransient<IBorrowingLogic, BorrowingLogic>();
-            //services.AddTransient<IBookLogic, BookLogic>();
+            services.AddTransient<IBorrowingLogic, BorrowingLogic>();
+            services.AddTransient<IBookLogic, BookLogic>();
 
             services.AddTransient<IStudentRepository, StudentRepository>();
-            //services.AddTransient<IBorrowingRepository, BorrowingRepository>();
-            //services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<IBorrowingRepository, BorrowingRepository>();
+            services.AddTransient<IBookRepository, BookRepository>();
 
             services.AddTransient<LibraryDbContext, LibraryDbContext>();
 
