@@ -1,3 +1,6 @@
+using FDU7VL_HFT_2021221.Data;
+using FDU7VL_HFT_2021221.Logic;
+using FDU7VL_HFT_2021221.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +20,16 @@ namespace FDU7VL_HFT_2021221.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<IStudentLogic, StudentLogic>();
+            //services.AddTransient<IBorrowingLogic, BorrowingLogic>();
+            //services.AddTransient<IBookLogic, BookLogic>();
+
+            services.AddTransient<IStudentRepository, StudentRepository>();
+            //services.AddTransient<IBorrowingRepository, BorrowingRepository>();
+            //services.AddTransient<IBookRepository, BookRepository>();
+
+            services.AddTransient<LibraryDbContext, LibraryDbContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
