@@ -13,6 +13,10 @@ namespace FDU7VL_HFT_2021221.Data
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Borrowing> Borrowings { get; set; }
         public virtual DbSet<Book> Books { get; set; }
+        public LibraryDbContext()
+        {
+            Database.EnsureCreated();
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -23,17 +27,25 @@ namespace FDU7VL_HFT_2021221.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
+            modelBuilder.Entity<Borrowing>().HasKey(x => new { x.StudentID, x.BookID });
+            
             modelBuilder.Entity<Borrowing>(entity =>
             {
                 entity.HasOne(Borrowing => Borrowing.Student)
                     .WithMany(Student => Student.Borrowings)
                     .HasForeignKey(Borrowing => Borrowing.StudentID)
                     .OnDelete(DeleteBehavior.ClientSetNull);
-                entity.HasOne(Borrowing => Borrowing.Book)
-                    .WithOne(Book => Book.Borrowing)
-                    .HasForeignKey<Book>(Borrowing => Borrowing.BookID);
+                
             });
-            
+            modelBuilder.Entity<Borrowing>(entity =>
+            {
+                entity.HasOne(Borrowing => Borrowing.Book)
+                    .WithMany(Book => Book.Borrowings)
+                    .HasForeignKey(Borrowing => Borrowing.BookID)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+            });
+
             //DbSeed
             Student peter = new() { StudentID = 1, Name = "Péter", Class = "A" };
             Student lilla = new() { StudentID = 2, Name = "Lilla", Class = "B" };
@@ -49,7 +61,7 @@ namespace FDU7VL_HFT_2021221.Data
             Borrowing gabor1 = new() { StudentID = 3, Date = new DateTime(2021, 10, 15), BookID = 3, BorrowingID = 5 };
             Borrowing igor1 = new() { StudentID = 4, Date = new DateTime(1910, 9, 12), BookID = 4, BorrowingID = 6 };
             Borrowing igor2 = new() { StudentID = 4, Date = new DateTime(2021, 6, 10), BookID = 6, BorrowingID = 7 };
-            Borrowing viktor1 = new() { StudentID = 1, Date = new DateTime(2021, 11, 5), BookID = 1, BorrowingID = 8 };
+            Borrowing viktor1 = new() { StudentID = 6, Date = new DateTime(2021, 11, 5), BookID = 1, BorrowingID = 8 };
 
 
             Book book1 = new() { BookID = 1, Title = "Head First C", Author = "David Griffith and Dawn Griffith"};

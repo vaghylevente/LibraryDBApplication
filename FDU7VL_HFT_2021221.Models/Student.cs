@@ -17,6 +17,7 @@ namespace FDU7VL_HFT_2021221.Models
         public string Name { get; set; }
         [MaxLength(1)]
         public string Class { get; set; }
+        [NotMapped]
         public virtual ICollection<Borrowing> Borrowings { get; set; }
 
         public Student()
