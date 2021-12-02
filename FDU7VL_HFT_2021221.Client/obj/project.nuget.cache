@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Rxp6z6ZfunnN4o/oi/A2NQLlRTENfzGv7k7E1YOtLmt0V1EA+LAPYbc2Ti24GuwJAVR+bQGjO0LW8sNaCI/0jg==",
+  "dgSpecHash": "B2YPk80SgoA/dlIIi7S0mU7VZFCv311pOHAp1iWMiIGODrMUy+lEIyyOPSwHyYrY61Ezr/n+2tqtMB8MdX6SkQ==",
   "success": true,
   "projectFilePath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Client\\FDU7VL_HFT_2021221.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Chairman Cat\\.nuget\\packages\\consolemenu-simple\\2.4.1\\consolemenu-simple.2.4.1.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

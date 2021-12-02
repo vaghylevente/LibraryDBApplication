@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "ConsoleMenu-simple/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/ConsoleMenu.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/ConsoleMenu.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -1455,6 +1467,20 @@
     }
   },
   "libraries": {
+    "ConsoleMenu-simple/2.4.1": {
+      "sha512": "Pxx5Nkjg9DG2Kqno33g334DfVNxxK3aBt3WoO0N6ru1nf9oA0Z29veOWzljMBuhNMHDSA3nnhr4Wx/HOssVc1w==",
+      "type": "package",
+      "path": "consolemenu-simple/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consolemenu-simple.2.4.1.nupkg.sha512",
+        "consolemenu-simple.nuspec",
+        "lib/netstandard1.3/ConsoleMenu.dll"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
       "type": "package",
@@ -5291,6 +5317,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ConsoleMenu-simple >= 2.4.1",
       "FDU7VL_HFT_2021221.Models >= 1.0.0",
       "Microsoft.AspNet.WebApi.Client >= 5.2.7"
     ]
@@ -5338,6 +5365,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "ConsoleMenu-simple": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.7, )"

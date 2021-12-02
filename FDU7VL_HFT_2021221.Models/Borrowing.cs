@@ -13,6 +13,7 @@ namespace FDU7VL_HFT_2021221.Models
     public class Borrowing
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BorrowingID { get; set; }
         public DateTime Date { get; set; }
 
@@ -26,7 +27,6 @@ namespace FDU7VL_HFT_2021221.Models
         public virtual Student Student { get; set; }
 
         [NotMapped]
-        
         public virtual Book Book { get; set; }
 
     }

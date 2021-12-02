@@ -13,6 +13,7 @@ namespace FDU7VL_HFT_2021221.Models
     public class Book
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BookID { get; set; }
         [Required]
         public string Title { get; set; }

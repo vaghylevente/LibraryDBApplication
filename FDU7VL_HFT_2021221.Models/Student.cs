@@ -13,6 +13,7 @@ namespace FDU7VL_HFT_2021221.Models
     public class Student
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentID { get; set; }
         [Required]
         public string Name { get; set; }
