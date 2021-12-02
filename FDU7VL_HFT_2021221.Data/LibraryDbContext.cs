@@ -27,25 +27,27 @@ namespace FDU7VL_HFT_2021221.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            /*
             modelBuilder.Entity<Borrowing>().HasKey(x => new { x.StudentID, x.BookID });
-            
+            */
             modelBuilder.Entity<Borrowing>(entity =>
             {
                 entity.HasOne(Borrowing => Borrowing.Student)
                     .WithMany(Student => Student.Borrowings)
                     .HasForeignKey(Borrowing => Borrowing.StudentID)
                     .OnDelete(DeleteBehavior.ClientSetNull);
-                
-            });
-            modelBuilder.Entity<Borrowing>(entity =>
-            {
                 entity.HasOne(Borrowing => Borrowing.Book)
                     .WithMany(Book => Book.Borrowings)
                     .HasForeignKey(Borrowing => Borrowing.BookID)
                     .OnDelete(DeleteBehavior.ClientSetNull);
-            });
 
+            });
+            /*
+            modelBuilder.Entity<Borrowing>(entity =>
+            {
+                
+            });
+            */
             //DbSeed
             Student peter = new() { StudentID = 1, Name = "Péter", Class = "A" };
             Student lilla = new() { StudentID = 2, Name = "Lilla", Class = "B" };

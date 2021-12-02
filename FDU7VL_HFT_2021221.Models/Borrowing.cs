@@ -23,11 +23,10 @@ namespace FDU7VL_HFT_2021221.Models
         public int BookID { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
         public virtual Student Student { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
+        
         public virtual Book Book { get; set; }
 
     }

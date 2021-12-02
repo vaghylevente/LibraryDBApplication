@@ -48,7 +48,8 @@ namespace FDU7VL_HFT_2021221.Logic
         //non-crud
         public Book MostPopularBook()
         {
-            var query = (from x in ReadAll()
+            
+            var query = (from x in ReadAll().ToList()
                          group x by x.Book into g
                          orderby g.Count() descending
                          select g.Key).FirstOrDefault();
@@ -64,7 +65,7 @@ namespace FDU7VL_HFT_2021221.Logic
         }
         public Student BiggestBorrower()
         {
-            var query = (from x in ReadAll()
+            var query = (from x in ReadAll().ToList()
                          group x by x.Student into g
                          orderby g.Count() descending
                          select g.Key).FirstOrDefault();
@@ -72,7 +73,7 @@ namespace FDU7VL_HFT_2021221.Logic
         }
         public IEnumerable<KeyValuePair<Book, int>> BorrowingPerBook()
         {
-            var query = from x in ReadAll()
+            var query = from x in ReadAll().ToList()
                         group x by x.Book into g
                         select new KeyValuePair<Book, int>(
                             g.Key, 
