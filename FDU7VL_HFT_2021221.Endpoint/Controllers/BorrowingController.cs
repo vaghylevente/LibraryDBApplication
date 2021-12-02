@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FDU7VL_HFT_2021221.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class BorrowingController : ControllerBase
     {
@@ -28,27 +28,30 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
 
         // GET api/<BorrowingController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Borrowing Get(int id)
         {
-            return "value";
+            return bl.Read(id);
         }
 
         // POST api/<BorrowingController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Borrowing value)
         {
+            bl.Create(value);
         }
 
         // PUT api/<BorrowingController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Borrowing value)
         {
+            bl.Update(value);
         }
 
         // DELETE api/<BorrowingController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            bl.Delete(id);
         }
     }
 }

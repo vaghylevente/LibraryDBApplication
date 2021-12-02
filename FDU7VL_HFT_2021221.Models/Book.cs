@@ -19,6 +19,7 @@ namespace FDU7VL_HFT_2021221.Models
         public string Author { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Borrowing> Borrowings { get; set; }
     }
 }

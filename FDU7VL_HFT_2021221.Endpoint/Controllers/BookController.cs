@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FDU7VL_HFT_2021221.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -28,27 +28,30 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
 
         // GET api/<BookController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Book Get(int id)
         {
-            return "value";
+            return bl.Read(id);
         }
 
         // POST api/<BookController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Book value)
         {
+            bl.Create(value);
         }
 
         // PUT api/<BookController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Book value)
         {
+            bl.Update(value);
         }
 
         // DELETE api/<BookController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            bl.Delete(id);
         }
     }
 }

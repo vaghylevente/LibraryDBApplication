@@ -35,20 +35,23 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
 
         // POST api/<StudentController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Student value)
         {
+            sl.Create(value);
         }
 
         // PUT api/<StudentController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Student value)
         {
+            sl.Update(value);
         }
 
         // DELETE api/<StudentController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            sl.Delete(id);
         }
     }
 }
