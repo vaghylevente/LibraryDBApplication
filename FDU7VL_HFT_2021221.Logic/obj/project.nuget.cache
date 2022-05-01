@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1RS/05ggxIZMxnCaqk06Ctn0llpemQM7XeCNSAl1+jrZxEwqK8yRgg0+AEDuNsS1eszfI4z0wuXevEMChBUkdg==",
+  "dgSpecHash": "upT5pYUMtQZeu4jBBCPIvjot5Qn0yKt21b+4ZDfpKhS2a3m4yrGkKOAGX/v2fPjiaE/Nz1N+7dkuC6ji+ooKPA==",
   "success": true,
-  "projectFilePath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Logic\\FDU7VL_HFT_2021221.Logic.csproj",
+  "projectFilePath": "C:\\Users\\Chairman Cat\\Source\\Repos\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Logic\\FDU7VL_HFT_2021221.Logic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WfXeqAxthPxgNsNalOlw6HTOcWz0qFrdlWn1PYn4ai25Ddh5tuxRZOm8UKUaoP0Cf4RVrWJ2u6AyJX3TR4HmrQ==",
+  "dgSpecHash": "mXhIj2wPl1LSzWsjB2lmG7T2Rim3K9VzfHqzgH4o6MzaG8hoYtC6qlGfq1QYeGFxr0EygvIKK+ODbV+Zxh9/zw==",
   "success": true,
-  "projectFilePath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\FDU7VL_HFT_2021221.Endpoint.csproj",
+  "projectFilePath": "C:\\Users\\Chairman Cat\\Source\\Repos\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Endpoint\\FDU7VL_HFT_2021221.Endpoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

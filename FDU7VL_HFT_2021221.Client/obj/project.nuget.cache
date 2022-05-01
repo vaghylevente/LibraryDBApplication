@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B2YPk80SgoA/dlIIi7S0mU7VZFCv311pOHAp1iWMiIGODrMUy+lEIyyOPSwHyYrY61Ezr/n+2tqtMB8MdX6SkQ==",
+  "dgSpecHash": "z3SODCd43Xh1foc/kafnBLYCFubietzsxJf3yGgN7gvz/cAWlLLUD1rQjXwWnAbPcEaETv2OrKMjAdA7lL+tuQ==",
   "success": true,
-  "projectFilePath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Client\\FDU7VL_HFT_2021221.Client.csproj",
+  "projectFilePath": "C:\\Users\\Chairman Cat\\Source\\Repos\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Client\\FDU7VL_HFT_2021221.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\consolemenu-simple\\2.4.1\\consolemenu-simple.2.4.1.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

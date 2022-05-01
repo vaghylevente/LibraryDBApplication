@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lnRXdhf8K1vRguZ19tj0/0ba6JvHwbKysSt0EJwfLKCGu29LR7LI9aImjBB/7iEnZRKxZqe9RIt7tG75WmJk3w==",
+  "dgSpecHash": "wr25hso+i7APCuyHgbZLyzzKDTNu3awNoCQKe7dde9I72+u+mshoLGPMAcrUNmnIp2fnX344jrIkQnImji8Q3w==",
   "success": true,
-  "projectFilePath": "D:\\git\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Data\\FDU7VL_HFT_2021221.Data.csproj",
+  "projectFilePath": "C:\\Users\\Chairman Cat\\Source\\Repos\\FDU7VL_HFT_2021221\\FDU7VL_HFT_2021221.Data\\FDU7VL_HFT_2021221.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Chairman Cat\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
