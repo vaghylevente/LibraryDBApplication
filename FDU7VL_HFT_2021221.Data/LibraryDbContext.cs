@@ -35,11 +35,11 @@ namespace FDU7VL_HFT_2021221.Data
                 entity.HasOne(Borrowing => Borrowing.Student)
                     .WithMany(Student => Student.Borrowings)
                     .HasForeignKey(Borrowing => Borrowing.StudentID)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .OnDelete(DeleteBehavior.Cascade);
                 entity.HasOne(Borrowing => Borrowing.Book)
                     .WithMany(Book => Book.Borrowings)
                     .HasForeignKey(Borrowing => Borrowing.BookID)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    .OnDelete(DeleteBehavior.Cascade);
 
             });
             /*
