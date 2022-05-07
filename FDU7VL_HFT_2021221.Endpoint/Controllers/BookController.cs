@@ -1,6 +1,8 @@
-﻿using FDU7VL_HFT_2021221.Logic;
+﻿using FDU7VL_HFT_2021221.Endpoint.Services;
+using FDU7VL_HFT_2021221.Logic;
 using FDU7VL_HFT_2021221.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,11 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
     public class BookController : ControllerBase
     {
         IBookLogic bl;
-        public BookController(IBookLogic bookLogic)
+        IHubContext<SignalRHub> hub;
+        public BookController(IBookLogic bookLogic, IHubContext<SignalRHub> hub)
         {
             bl = bookLogic;
+            this.hub = hub;
         }
         // GET: api/<BookController>
         [HttpGet]
@@ -38,6 +42,7 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
         public void Post([FromBody] Book value)
         {
             bl.Create(value);
+            this.hub.Clients.All.SendAsync("BookCreated", value);
         }
 
         // PUT api/<BookController>/5
@@ -45,13 +50,17 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
         public void Put([FromBody] Book value)
         {
             bl.Update(value);
+            this.hub.Clients.All.SendAsync("BookUpdated", value);
         }
 
         // DELETE api/<BookController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var bookToDelete = bl.Read(id);
             bl.Delete(id);
+            this.hub.Clients.All.SendAsync("BookDeleted", bookToDelete);
+            this.hub.Clients.All.SendAsync("BorrowingDeleted", null);
         }
     }
 }

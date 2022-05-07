@@ -1,6 +1,8 @@
-﻿using FDU7VL_HFT_2021221.Logic;
+﻿using FDU7VL_HFT_2021221.Endpoint.Services;
+using FDU7VL_HFT_2021221.Logic;
 using FDU7VL_HFT_2021221.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,11 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
     public class StudentController : ControllerBase
     {
         IStudentLogic sl;
-        public StudentController(IStudentLogic studentLogic)
+        IHubContext<SignalRHub> hub;
+        public StudentController(IStudentLogic studentLogic, IHubContext<SignalRHub> hub)
         {
             sl = studentLogic;
+            this.hub = hub;
         }
         // GET: api/<StudentController>
         [HttpGet]
@@ -38,6 +42,7 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
         public void Post([FromBody] Student value)
         {
             sl.Create(value);
+            this.hub.Clients.All.SendAsync("StudentCreated", value);
         }
 
         // PUT api/<StudentController>/5
@@ -45,13 +50,17 @@ namespace FDU7VL_HFT_2021221.Endpoint.Controllers
         public void Put([FromBody] Student value)
         {
             sl.Update(value);
+            this.hub.Clients.All.SendAsync("StudentUpdated", value);
         }
 
         // DELETE api/<StudentController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var studentToDelete = this.sl.Read(id);
             sl.Delete(id);
+            this.hub.Clients.All.SendAsync("StudentDeleted", studentToDelete);
+            this.hub.Clients.All.SendAsync("BorrowingDeleted", null);
         }
     }
 }

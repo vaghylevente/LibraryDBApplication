@@ -34,6 +34,7 @@ namespace FDU7VL_HFT_2021221.Repository
             var oldBorrowing = Read(borrowing.BorrowingID);
             oldBorrowing.StudentID = borrowing.StudentID;
             oldBorrowing.BookID = borrowing.BookID;
+            oldBorrowing.Date = borrowing.Date;
             db.SaveChanges();
         }
         public void Delete(int id)

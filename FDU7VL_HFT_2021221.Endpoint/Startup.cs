@@ -1,4 +1,5 @@
 using FDU7VL_HFT_2021221.Data;
+using FDU7VL_HFT_2021221.Endpoint.Services;
 using FDU7VL_HFT_2021221.Logic;
 using FDU7VL_HFT_2021221.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -30,6 +31,7 @@ namespace FDU7VL_HFT_2021221.Endpoint
 
             services.AddTransient<LibraryDbContext, LibraryDbContext>();
 
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +47,7 @@ namespace FDU7VL_HFT_2021221.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FDU7VL_HFT_2021221.WPFClient"
         mc:Ignorable="d"
-        Title="Library Editor" Height="450" Width="1000">
+        Title="Library Editor" Height="800" Width="1400">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
+        <ListBox Grid.Column="0" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" HorizontalContentAlignment="Center">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding Name}"/>
@@ -26,9 +26,51 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Column="1" Background="RoyalBlue">
+            <Label Content="StudentID" HorizontalContentAlignment="Center" Foreground="White"/>
+            <Label Content="{Binding SelectedStudent.StudentID}" Height="40" Padding="10" Margin="10" Background="White"/>
+            <Label Content="Name" HorizontalContentAlignment="Center" Foreground="White"/>
+            <TextBox Text="{Binding SelectedStudent.Name}" Padding="10" Margin="10"/>
+            <Label Content="Class" HorizontalContentAlignment="Center" Foreground="White"/>
+            <TextBox Text="{Binding SelectedStudent.Class}" Padding="10" Margin="10"/>
             <Button Content="Create" Command="{Binding CreateStudentCommand}" Margin="10" Padding="10"/>
             <Button Content="Delete" Command="{Binding DeleteStudentCommand}" Margin="10" Padding="10"/>
             <Button Content="Update" Command="{Binding UpdateStudentCommand}" Margin="10" Padding="10"/>
+        </StackPanel>
+        <ListBox Grid.Column="2" ItemsSource="{Binding Borrowings}" SelectedItem="{Binding SelectedBorrowing}" HorizontalContentAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding BorrowingID}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="3" Background="RoyalBlue">
+            <Label Content="StudentID" HorizontalContentAlignment="Center" Foreground="White"/>
+            <TextBox Text="{Binding SelectedBorrowing.StudentID}" Padding="10" Margin="10"/>
+            <Label Content="BookID" HorizontalContentAlignment="Center" Foreground="White"/>
+            <TextBox Text="{Binding SelectedBorrowing.BookID}" Padding="10" Margin="10"/>
+            <Label Content="Date" HorizontalContentAlignment="Center" Foreground="White"/>
+            <DatePicker SelectedDate="{Binding SelectedBorrowing.Date}" Padding="10" Margin="10" Background="White"/>
+            <Button Content="Create" Command="{Binding CreateBorrowingCommmand}" Margin="10" Padding="10"/>
+            <Button Content="Delete" Command="{Binding DeleteBorrowingCommand}" Margin="10" Padding="10"/>
+            <Button Content="Update" Command="{Binding UpdateBorrowingCommand}" Margin="10" Padding="10"/>
+        </StackPanel>
+        <ListBox Grid.Column="4" ItemsSource="{Binding Books}" SelectedItem="{Binding SelectedBook}" HorizontalContentAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Title}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="5" Background="RoyalBlue">
+            <Label Content="BookID" HorizontalContentAlignment="Center" Foreground="White"/>
+            <Label Content="{Binding SelectedBook.BookID}" Height="40" Padding="10" Margin="10" Background="White"/>
+            <Label Content="Title" HorizontalContentAlignment="Center" Foreground="White"/>
+            <TextBox Text="{Binding SelectedBook.Title}" Padding="10" Margin="10"/>
+            <Label Content="Author" HorizontalContentAlignment="Center" Foreground="White"/>
+            <TextBox Text="{Binding SelectedBook.Author}" Padding="10" Margin="10"/>
+            <Button Content="Create" Command="{Binding CreateBookCommand}" Margin="10" Padding="10"/>
+            <Button Content="Delete" Command="{Binding DeleteBookCommand}" Margin="10" Padding="10"/>
+            <Button Content="Update" Command="{Binding UpdateBookCommand}" Margin="10" Padding="10"/>
         </StackPanel>
     </Grid>
 </Window>
