@@ -33,7 +33,7 @@ namespace FDU7VL_HFT_2021221.WPFClient
                     {
                         StudentID = value.StudentID,
                         Name = value.Name,
-                        Class = value.Class
+                        StudentClass = value.StudentClass
                     };
                     OnPropertyChanged();
                     (DeleteStudentCommand as RelayCommand).NotifyCanExecuteChanged();
@@ -113,7 +113,7 @@ namespace FDU7VL_HFT_2021221.WPFClient
                     () => Students.Add(new Student()
                     {
                         Name = SelectedStudent.Name,
-                        Class= SelectedStudent.Class
+                        StudentClass= SelectedStudent.StudentClass
                     })
                     );
                 DeleteStudentCommand = new RelayCommand(

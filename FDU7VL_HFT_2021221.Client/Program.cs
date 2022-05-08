@@ -18,7 +18,7 @@ namespace FDU7VL_HFT_2021221.Client
                                 {
                                     foreach (var item in rest.Get<Student>("student"))
                                     {
-                                        Console.WriteLine(@"{0} from class {1}, StudentID: {2}", item.Name,item.Class, item.StudentID);
+                                        Console.WriteLine(@"{0} from class {1}, StudentID: {2}", item.Name,item.StudentClass, item.StudentID);
                                     }
                                     Console.ReadKey();
                                 })
@@ -27,7 +27,7 @@ namespace FDU7VL_HFT_2021221.Client
                                     Console.Write("Input a studentID: ");
                                     string id = Console.ReadLine();
                                     var student = rest.GetSingle<Student>("student/" + id);
-                                    Console.WriteLine(@"{0} from class {1}", student.Name, student.Class);
+                                    Console.WriteLine(@"{0} from class {1}", student.Name, student.StudentClass);
                                     Console.ReadLine();
                                 })
                                 .Add("Create", () =>
@@ -37,7 +37,7 @@ namespace FDU7VL_HFT_2021221.Client
                                     Console.Write("Name: ");
                                     newStudent.Name = Console.ReadLine();
                                     Console.Write("Class: ");
-                                    newStudent.Class = Console.ReadLine();
+                                    newStudent.StudentClass = Console.ReadLine();
                                     rest.Post<Student>(newStudent, "student");
                                 })
                                 .Add("Update", () =>
@@ -48,7 +48,7 @@ namespace FDU7VL_HFT_2021221.Client
                                     Console.Write("Name: ");
                                     newStudent.Name = Console.ReadLine();
                                     Console.Write("Class: ");
-                                    newStudent.Class = Console.ReadLine();
+                                    newStudent.StudentClass = Console.ReadLine();
                                     rest.Put<Student>(newStudent, "student");
                                 })
                                 .Add("Delete", () =>

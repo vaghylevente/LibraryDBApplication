@@ -28,12 +28,12 @@ namespace FDU7VL_HFT_2021221.Test
                 new Student()
                 {
                     Name = "Péter",
-                    Class = "A",
+                    StudentClass = "A",
                 },
                 new Student()
                 {
                     Name = "Anna",
-                    Class = "B",
+                    StudentClass = "B",
                 }
             }.AsQueryable();
             var books = new List<Book>()

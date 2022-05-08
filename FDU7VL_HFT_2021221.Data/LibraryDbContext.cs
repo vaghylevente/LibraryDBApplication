@@ -49,12 +49,12 @@ namespace FDU7VL_HFT_2021221.Data
             });
             */
             //DbSeed
-            Student peter = new() { StudentID = 1, Name = "Péter", Class = "A" };
-            Student lilla = new() { StudentID = 2, Name = "Lilla", Class = "B" };
-            Student gabor = new() { StudentID = 3, Name = "Gábor", Class = "C" };
-            Student igor = new() { StudentID = 4, Name = "Igor", Class = "A" };
-            Student chad = new() { StudentID = 5, Name = "Chad", Class = "A" };
-            Student viktor = new() { StudentID = 6, Name = "Viktor", Class = "B" };
+            Student peter = new() { StudentID = 1, Name = "Péter", StudentClass = "A" };
+            Student lilla = new() { StudentID = 2, Name = "Lilla", StudentClass = "B" };
+            Student gabor = new() { StudentID = 3, Name = "Gábor", StudentClass = "C" };
+            Student igor = new() { StudentID = 4, Name = "Igor", StudentClass = "A" };
+            Student chad = new() { StudentID = 5, Name = "Chad", StudentClass = "A" };
+            Student viktor = new() { StudentID = 6, Name = "Viktor", StudentClass = "B" };
 
             Borrowing peter1 = new() { StudentID = 1, Date = new DateTime(2021, 10, 10), BookID = 1, BorrowingID = 1 };
             Borrowing lilla1 = new() { StudentID = 2, Date = new DateTime(2021, 10, 17), BookID = 1, BorrowingID = 2 };

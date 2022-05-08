@@ -20,17 +20,14 @@ th{
     color: white;
 }
 
-#formdiv {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-#formdiv label, button, input{
+label, button, input{
     margin: 10px;
     padding: 7px;
 }
+#updateformdiv {
+    display: none;
+}
 
-#formdiv label{
+label{
     font-weight: bolder;
 }

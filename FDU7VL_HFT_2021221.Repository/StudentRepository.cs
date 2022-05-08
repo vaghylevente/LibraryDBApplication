@@ -36,7 +36,7 @@ namespace FDU7VL_HFT_2021221.Repository
         public void Update(Student student)
         {
             var oldStudent = Read(student.StudentID);
-            oldStudent.Class = student.Class;
+            oldStudent.StudentClass = student.StudentClass;
             oldStudent.Name = student.Name;
             db.SaveChanges();
         }

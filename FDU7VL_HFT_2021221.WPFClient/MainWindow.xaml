@@ -31,7 +31,7 @@
             <Label Content="Name" HorizontalContentAlignment="Center" Foreground="White"/>
             <TextBox Text="{Binding SelectedStudent.Name}" Padding="10" Margin="10"/>
             <Label Content="Class" HorizontalContentAlignment="Center" Foreground="White"/>
-            <TextBox Text="{Binding SelectedStudent.Class}" Padding="10" Margin="10"/>
+            <TextBox Text="{Binding SelectedStudent.StudentClass}" Padding="10" Margin="10"/>
             <Button Content="Create" Command="{Binding CreateStudentCommand}" Margin="10" Padding="10"/>
             <Button Content="Delete" Command="{Binding DeleteStudentCommand}" Margin="10" Padding="10"/>
             <Button Content="Update" Command="{Binding UpdateStudentCommand}" Margin="10" Padding="10"/>
