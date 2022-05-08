@@ -26,3 +26,21 @@ function display() {
             </tr>`
     })
 }
+
+/*
+function create() {
+    let name = document.getElementById('studentName').value;
+    fetch('http://localhost:20621/student', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            { studentName: name, studentClass: class }
+        ),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            getdata();
+        })
+        .catch((error) => { console.error('Error:', error); });
+        */

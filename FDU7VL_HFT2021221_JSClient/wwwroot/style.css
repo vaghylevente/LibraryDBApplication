@@ -1,5 +1,5 @@
 ﻿table{
-    width: 100%;
+    width: 50%;
 }
 
 table, th, td{
@@ -18,4 +18,19 @@ th, td{
 th{
     background-color:royalblue;
     color: white;
+}
+
+#formdiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#formdiv label, button, input{
+    margin: 10px;
+    padding: 7px;
+}
+
+#formdiv label{
+    font-weight: bolder;
 }
